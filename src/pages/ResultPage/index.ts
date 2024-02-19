@@ -1,1 +1,1 @@
-export { ResultPage } from './ui/ResultPage';
+export { ResultPageAsync as ResultPage } from './ui/ResultPage.async';

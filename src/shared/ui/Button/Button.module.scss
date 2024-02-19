@@ -1,0 +1,22 @@
+.button{
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  font-size: 16px;
+  color: white;
+  padding: 10px 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.main {
+  background-color: #32c1c9;
+}
+
+.second {
+  background-color: orangered;
+}
+
+.disabled{
+  cursor: not-allowed;
+}

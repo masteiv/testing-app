@@ -1,0 +1,14 @@
+.wrapper{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: white;
+
+  *{
+    cursor: pointer;
+  }
+
+  label{
+    font-size: 18px;
+  }
+}

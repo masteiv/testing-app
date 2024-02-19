@@ -1,0 +1,26 @@
+[
+    {
+      "id": "1",
+      "nameQuiz": "Quiz-1",
+      "questions": [
+        {
+          "question": "Что такое JS?",
+          "correctAnswerValue": "0",
+          "answers": [
+            {
+              "answer": "Язык программирования", "value": "0"
+            },
+            {
+              "answer": "Автомобиль", "value": "1"
+            },
+            {
+              "answer": "Дом", "value": "2"
+            },
+            {
+              "answer": "Дорога", "value": "3"
+            }
+          ]
+        }
+      ]
+    }
+]
