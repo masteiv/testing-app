@@ -15,6 +15,7 @@ export const SelectQuizList = () => {
     const [selectedQuizCard, setSelectedQuizCard] = useState(1);
     const [isActiveQuiz, setIsActiveQuiz] = useState<number | undefined>();
     const [notPassedQuizData, setNotPassedQuizData] = useState<ResultQuizUser>({});
+    const [isNameErrorValidation, setIsNameErrorValidation] = useState(false);
     const [name, setName] = useState('');
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -43,6 +44,7 @@ export const SelectQuizList = () => {
     const onHandleSubmitForm = (event: SyntheticEvent) => {
         event.preventDefault();
         if (!name) {
+            setIsNameErrorValidation(true);
             return;
         }
         navigate(`/test/${selectedQuizCard}`);
@@ -55,6 +57,7 @@ export const SelectQuizList = () => {
     const onChangeInputName = useCallback(
         (value: string) => {
             setName(value);
+            setIsNameErrorValidation(false);
             dispatch(quizActions.setNameUser(value));
         },
         [dispatch],
@@ -81,6 +84,11 @@ export const SelectQuizList = () => {
                     {isActiveQuiz === selectedQuizCard ? 'Продолжить прохождение теста' : 'Начать'}
                 </Button>
             </form>
+            {isNameErrorValidation && (
+                <Typography tag="p" className={styles.nameErrorValidation}>
+                    Введите имя для прохождения теста!
+                </Typography>
+            )}
         </div>
     );
 };
