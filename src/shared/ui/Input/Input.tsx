@@ -10,12 +10,10 @@ interface InputProps extends HTMLInputProps {
 }
 
 // eslint-disable-next-line react/display-name
-const Input = memo(({ onChange, value }: InputProps) => {
+export const Input = memo(({ onChange, value, placeholder = '' }: InputProps) => {
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         onChange?.(event.target.value);
     };
 
-    return <input className={styles.input} onChange={onChangeHandler} value={value} />;
+    return <input className={styles.input} onChange={onChangeHandler} value={value} placeholder={placeholder} />;
 });
-
-export default Input;

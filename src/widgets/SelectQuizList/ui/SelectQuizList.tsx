@@ -5,9 +5,8 @@ import { getNameUser, getResultQuizUser, quizActions, QuizCard, useFetchQuizData
 import type { ResultQuizUser } from 'entities/Quiz/types/quiz';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
-
-import Input from '../../../shared/ui/Input/Input';
-import { Typography } from '../../../shared/ui/Typography/Typography';
+import { Input } from 'shared/ui/Input/Input';
+import { Typography } from 'shared/ui/Typography/Typography';
 
 import styles from './SelectQuizList.module.scss';
 
@@ -77,7 +76,7 @@ export const SelectQuizList = () => {
                 />
             ))}
             <form onSubmit={onHandleSubmitForm} className={styles.form}>
-                <Input onChange={onChangeInputName} value={name} />
+                <Input onChange={onChangeInputName} value={name} placeholder="Введите имя" />
                 <Button type="submit">
                     {isActiveQuiz === selectedQuizCard ? 'Продолжить прохождение теста' : 'Начать'}
                 </Button>
